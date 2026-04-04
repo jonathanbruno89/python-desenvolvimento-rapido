@@ -23,8 +23,8 @@ def remover():
     if not selecionado:
         messagebox.showwarning("Aviso", "Selecione alguém para remover!")
         return
-    texto = lista_get(selecionado)
-    nome = texto.split("-")[0]
+    texto = lista.get(selecionado)
+    nome = texto.split(" - ")[0]
     del dados[nome]
     atualizar_lista()
 
@@ -43,4 +43,4 @@ tk.Button(janela, text="Remover", command=remover).pack(pady=5)
 lista = tk.Listbox(janela, width=40)
 lista.pack(pady=10)
 
-janela.mainloop( )
+janela.mainloop()
